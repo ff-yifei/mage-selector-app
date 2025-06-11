@@ -1,0 +1,2 @@
+# mage-selector-app
+features
