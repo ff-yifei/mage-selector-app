@@ -1,0 +1,1 @@
+echo "Initial content" > new_folder/file.txt
