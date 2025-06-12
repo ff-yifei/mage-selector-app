@@ -1,1 +1,3 @@
-echo "Initial content" > new_folder/file.txt
+git add images/your_image.png
+git commit -m "CD3D.png"
+git push
