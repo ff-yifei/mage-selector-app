@@ -12,7 +12,7 @@ submit = st.sidebar.button("提交")
 if submit:
     image_path = f"images/{feature1}.png"
     if os.path.exists(image_path):
-        st.image(Image.open(image_path), caption=f"{feature1}", use_column_width=True)
+        st.image(Image.open(image_path), caption=f"{feature1}", use_container_width=True)
     else:
         st.warning("找不到对应的图片，请确认参数组合和文件名是否一致。")
 
