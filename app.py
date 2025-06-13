@@ -5,7 +5,7 @@ import os
 st.title("图片选择展示网站")
 
 # 左侧参数选择
-feature1 = st.sidebar.selectbox("选择 Gene", ["CD3D", "CD3E", "EPCAM"])
+feature1 = st.sidebar.selectbox("选择 Gene", ["ACTA2","CD3D", "CD3E","CD4","CD8A", "EPCAM"])
 submit = st.sidebar.button("提交")
 
 # 显示图片
