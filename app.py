@@ -5,7 +5,8 @@ import os
 st.title("图片选择展示网站")
 
 # 左侧参数选择
-feature1 = st.sidebar.selectbox("选择 Gene", ["ACTA2","CD3D", "CD3E","CD4","CD8A", "CD14","CD68","CD79A","CLEC10A","COL1A1","CSF3R","DCN","FAP","FOXP3","IGHG1","IGKC","JCHAIN","KRT8","KRT18","KRT19","NKG7","TPSB2","VWF","EPCAM"])
+feature1 = st.sidebar.selectbox("Gene", ["ACTA2","CD3D", "CD3E","CD4","CD8A", "CD14","CD68","CD79A","CLEC10A","COL1A1","CSF3R","DCN","FAP","FOXP3","IGHG1","IGKC","JCHAIN","KRT8","KRT18","KRT19","NKG7","TPSB2","VWF","EPCAM"])
+feature2=st.sidebar.selectbox("Major cell type", ["ACTA2"])
 submit = st.sidebar.button("提交")
 
 # 显示图片
