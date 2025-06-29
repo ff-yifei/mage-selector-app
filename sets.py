@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 import os
-
 st.set_page_config(layout="wide")
 st.title("图片选择展示网站")
 left_col, right_col = st.columns([1, 3])
