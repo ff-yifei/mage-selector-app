@@ -44,11 +44,14 @@ with left_col:
         feature4 = st.selectbox("meta information", 
                                ["Cell type", "Patient ID", "Treatment"],
                                key="meta1")
+ with right_col:
+    st.header("📊 结果展示")
     
- if submit:
-    image_path = f"images/{feature1}.png" or f"images/{feature2}.png"
+     
+    if submit:
+       image_path = f"images/{feature1}.png" or f"images/{feature2}.png"
 
-    if os.path.exists(image_path):
-        st.image(Image.open(image_path), caption=f"{feature1}" or f"{feature2}", use_container_width=True)
-    else:
-        st.warning("找不到对应的图片，请确认参数组合和文件名是否一致。")
+       if os.path.exists(image_path):
+           st.image(Image.open(image_path), caption=f"{feature1}" or f"{feature2}", use_container_width=True)
+       else:
+           st.warning("找不到对应的图片，请确认参数组合和文件名是否一致。")
