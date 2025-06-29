@@ -44,6 +44,7 @@ with left_col:
         feature4 = st.selectbox("meta information", 
                                ["Cell type", "Patient ID", "Treatment"],
                                key="meta1")
+    submit = st.button("GO", key="submit2")
  with right_col:
     st.header("📊 结果展示")
     
