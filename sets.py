@@ -29,7 +29,7 @@ with left_col:
                                key="celltype1")
     
     # 提交按钮应该在左侧列内
-    submit = st.button("GO", key="submit1")
+    submit_umap = st.button("显示UMAP图", key="submit_umap")
     
     st.markdown("---")
     
