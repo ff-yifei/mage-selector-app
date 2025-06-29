@@ -7,7 +7,7 @@ left_col, right_col = st.columns([1, 3])
 with left_col:
     # 左侧区域分为上下两部分
    st.header("🛠️ 控制面板")
-    st.subheader("UMAP Plot")
+st.subheader("UMAP Plot")
     col1, col2 = st.columns(2)
 with col1:
     feature1 = st.sidebar.selectbox("Gene", ["ACTA2","CD3D", "CD3E","CD4","CD8A", "CD14","CD68","CD79A","CLEC10A","COL1A1","CSF3R","DCN","FAP","FOXP3","IGHG1","IGKC","JCHAIN","KRT8","KRT18","KRT19","NKG7","TPSB2","VWF","EPCAM"])
