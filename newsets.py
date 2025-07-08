@@ -276,12 +276,14 @@ def main():
     # 显示配置信息
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 当前配置")
-    st.sidebar.info(f"仓库: {repo_owner}/{repo_name}")
-    st.sidebar.info(f"分支: {branch}")
-    st.sidebar.info(f"基础路径: {base_path}")
-    st.sidebar.info(f"配置文件: {config_path}")
+    st.sidebar.info(f"仓库: {ff-yifei}/{mage-selector-app}")
+    st.sidebar.info(f"分支: {main}")
+    st.sidebar.info(f"基础路径: {gene_paths.csv}")
+    st.sidebar.info(f"配置文件: {gene_paths.csv}")
     st.sidebar.info(f"分隔符: '{csv_delimiter}'")
     st.sidebar.info(f"标题行: {'是' if has_header else '否'}")
+
+
     
     # 加载基因路径信息
     with st.spinner("正在加载基因数据..."):
