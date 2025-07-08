@@ -84,15 +84,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 从环境变量获取GitHub仓库配置
-REPO_OWNER = st.secrets.get("REPO_OWNER", "ff-yifei")
-REPO_NAME = st.secrets.get("REPO_NAME", "mage-selector-app")
-BRANCH = st.secrets.get("BRANCH", "main")
-CONFIG_PATH = st.secrets.get("CONFIG_PATH", "gene_paths.csv")
-CSV_DELIMITER = st.secrets.get("CSV_DELIMITER", " ")
-HAS_HEADER = st.secrets.get("HAS_HEADER", "true").lower() == "true"
-GENE_COLUMN = st.secrets.get("GENE_COLUMN", "Gene")
-PATH_COLUMN = st.secrets.get("PATH_COLUMN", "image_path")
-GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
+REPO_OWNER = st.secrets.get( "ff-yifei")
+REPO_NAME = st.secrets.get( "mage-selector-app")
+BRANCH = st.secrets.get("main")
+CONFIG_PATH = st.secrets.get("gene_paths.csv")
+CSV_DELIMITER = st.secrets.get(" ")
+HAS_HEADER = st.secrets.get("true").lower() == "true"
+GENE_COLUMN = st.secrets.get("Gene")
+PATH_COLUMN = st.secrets.get("image_path")
+GITHUB_TOKEN = st.secrets.get("")
 
 
 
