@@ -84,18 +84,17 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 从环境变量获取GitHub仓库配置
-REPO_OWNER = st.secrets.get( "ff-yifei")
-REPO_NAME = st.secrets.get( "mage-selector-app")
-BRANCH = st.secrets.get("main")
-CONFIG_PATH = st.secrets.get("gene_paths.csv")
-CSV_DELIMITER = st.secrets.get(" ")
-HAS_HEADER = st.secrets.get("true").lower() == "true"
-GENE_COLUMN = st.secrets.get("Gene")
-PATH_COLUMN = st.secrets.get("image_path")
-GITHUB_TOKEN = st.secrets.get("")
 
 
-
+REPO_OWNER = "ff-yifei"      # GitHub用户名或组织名
+REPO_NAME = "mage-selector-app"       # 仓库名称
+BRANCH = "main"                          # 分支名称
+CONFIG_PATH = "mapping.csv"           # CSV文件路径
+CSV_DELIMITER = ","                      # CSV分隔符
+HAS_HEADER = "true"                      # CSV是否有标题行
+GENE_COLUMN = "gene"                     # 基因列名
+PATH_COLUMN = "image_path"                     # 路径列名
+GITHUB_TOKEN = "your-github-token"  
 
 # 获取GitHub API头信息
 def get_github_headers():
@@ -271,17 +270,6 @@ def get_github_image(gene_path):
     
     return None
 
-# 主应用
-def main():
-    # 显示配置信息
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("### 当前配置")
-    st.sidebar.info(f"仓库: {ff-yifei}/{mage-selector-app}")
-    st.sidebar.info(f"分支: {main}")
-    st.sidebar.info(f"基础路径: {gene_paths.csv}")
-    st.sidebar.info(f"配置文件: {gene_paths.csv}")
-    st.sidebar.info(f"分隔符: '{csv_delimiter}'")
-    st.sidebar.info(f"标题行: {'是' if has_header else '否'}")
 
 
     
