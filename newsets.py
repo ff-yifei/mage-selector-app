@@ -83,26 +83,19 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# 配置GitHub仓库信息
-st.sidebar.header("GitHub 配置")
-st.sidebar.header("GitHub 配置")
-repo_owner = st.sidebar.text_input( "ff-yifei")
-repo_name = st.sidebar.text_input(mage-selector-app)
-branch = st.sidebar.text_input("分支", "main")
-base_path = st.sidebar.text_input("图片基础路径", "data/images")
-config_path = st.sidebar.text_input("基因路径CSV文件路径", "gene_paths.csv")
+# 从环境变量获取GitHub仓库配置
+REPO_OWNER = st.secrets.get("REPO_OWNER", "ff-yifei")
+REPO_NAME = st.secrets.get("REPO_NAME", "mage-selector-app")
+BRANCH = st.secrets.get("BRANCH", "main")
+CONFIG_PATH = st.secrets.get("CONFIG_PATH", "gene_paths.csv")
+CSV_DELIMITER = st.secrets.get("CSV_DELIMITER", " ")
+HAS_HEADER = st.secrets.get("HAS_HEADER", "true").lower() == "true"
+GENE_COLUMN = st.secrets.get("GENE_COLUMN", "Gene")
+PATH_COLUMN = st.secrets.get("PATH_COLUMN", "image_path")
+GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "")
 
-# CSV配置选项
-st.sidebar.markdown("### CSV配置")
-csv_delimiter = st.sidebar.selectbox("CSV分隔符", ["\t"], index=0)
-has_header = st.sidebar.checkbox("CSV包含标题行", True)
-gene_column = st.sidebar.text_input("基因列名/索引", "Gene")
-path_column = st.sidebar.text_input("路径列名/索引", "image_path")
 
-# 从环境变量或用户输入获取GitHub Token
-github_token = st.secrets.get("GITHUB_TOKEN", "")
-if not github_token:
-    github_token = st.sidebar.text_input("GitHub Token (可选)", type="password")
+
 
 # 获取GitHub API头信息
 def get_github_headers():
@@ -141,17 +134,17 @@ def get_github_directory_structure(path):
     return []
 
 # 从CSV内容解析基因路径信息
-def parse_gene_paths_from_csv(csv_content):
+def parse_gene_paths_from_csv(mapping.csv):
     gene_paths = {}
     
     # 使用StringIO将字符串转换为类文件对象
-    csv_data = StringIO(csv_content)
+    csv_data = StringIO(mapping.csv)
     
     try:
         # 尝试使用pandas解析CSV
         try:
             df = pd.read_csv(
-                csv_data, 
+                mapping.csv, 
                 sep=csv_delimiter,
                 header=0 if has_header else None
             )
