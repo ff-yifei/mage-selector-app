@@ -134,17 +134,17 @@ def get_github_directory_structure(path):
     return []
 
 # 从CSV内容解析基因路径信息
-def parse_gene_paths_from_csv(mapping.csv):
+def parse_gene_paths_from_csv(csv_content):
     gene_paths = {}
     
     # 使用StringIO将字符串转换为类文件对象
-    csv_data = StringIO(mapping.csv)
+    csv_data = StringIO(csv_content)
     
     try:
         # 尝试使用pandas解析CSV
         try:
             df = pd.read_csv(
-                mapping.csv, 
+                csv_content, 
                 sep=csv_delimiter,
                 header=0 if has_header else None
             )
