@@ -421,9 +421,7 @@ def get_github_image(gene_path):
     </script>
     """, unsafe_allow_html=True)
 
-# 运行应用
-if __name__ == "__main__":
-    main()
+
 
 
     
