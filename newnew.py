@@ -99,9 +99,9 @@ st.markdown("""
 REPO_OWNER = "ff-yifei"                # GitHub用户名或组织名
 REPO_NAME = "mage-selector-app"        # 仓库名称
 BRANCH = "main"                        # 分支名称
-UMAP_CONFIG_PATH = "umap_mapping.csv"  # UMAP CSV文件路径
-VIOLIN_CONFIG_PATH = "violin_mapping.csv"  # Violin CSV文件路径
-CSV_DELIMITER = ","                    # CSV分隔符
+UMAP_CONFIG_PATH = "images-mapping.csv"  # UMAP CSV文件路径
+VIOLIN_CONFIG_PATH = "mapping-violin.csv"  # Violin CSV文件路径
+CSV_DELIMITER = "/"                    # CSV分隔符
 GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN", "your-github-token")  # 从secrets获取token
 
 # 获取GitHub API头信息
